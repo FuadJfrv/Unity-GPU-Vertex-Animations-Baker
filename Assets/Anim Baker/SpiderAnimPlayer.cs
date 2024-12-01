@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class SpiderAnimPlayer : MonoBehaviour
 {
+    public Material material;
     private AnimTexManager _animTexManager;
     private int _index;
+    
     private void Awake()
     {
         _animTexManager = FindObjectOfType<AnimTexManager>();
@@ -14,7 +16,7 @@ public class SpiderAnimPlayer : MonoBehaviour
 
     private void Start()
     {
-        _animTexManager.PlayAnim(GetComponent<MeshRenderer>().sharedMaterial, _index);
+        _animTexManager.PlayAnim(material, _index);
     }
 
     private void Update()
@@ -22,7 +24,7 @@ public class SpiderAnimPlayer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _index++;
-            _animTexManager.PlayAnim(GetComponent<MeshRenderer>().sharedMaterial, _index);
+            _animTexManager.PlayAnim(material, _index);
         }
     }
 }

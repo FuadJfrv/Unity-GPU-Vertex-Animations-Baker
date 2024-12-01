@@ -14,7 +14,7 @@ public class AnimTexGenerator : MonoBehaviour
 
     private Mesh _fileMesh;
     private String _pathToMesh;
-    private const String _pathToFolder = "Assets/Anim Baker/";
+    private const String _pathToFolder = "Assets/Anim Baker";
     private void Init()
     {
         _animator = GetComponent<Animator>();
@@ -32,14 +32,16 @@ public class AnimTexGenerator : MonoBehaviour
         //create a folder for this object
         if (AssetDatabase.IsValidFolder(_pathToFolder + gameObject.name + "/") == false)
         {
+            print(_pathToFolder);
             AssetDatabase.CreateFolder(_pathToFolder, gameObject.name);
         }
-        var pathToObjectFolder = _pathToFolder + gameObject.name + "/";
+        var pathToObjectFolder = _pathToFolder + "/" + gameObject.name + "/";
         
         //get the mesh from the files so changes are saved when scene/editor restarts
         var meshPath = pathToObjectFolder + gameObject.name + "_mesh" + ".mesh";
         Mesh m = new Mesh();
         _meshRenderer.BakeMesh(m);
+        print(meshPath);
         AssetDatabase.CreateAsset(m, meshPath);
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();

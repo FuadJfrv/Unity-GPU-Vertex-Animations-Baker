@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6abe4bfaafa8a54a814ec49da1b7bc1, type: 3}
+  m_Name: spider_data
+  m_EditorClassIdentifier: 
+  startFrames:
+  - 0
+  - 0.50427353
+  - 0.75213677
+  endFrames:
+  - 0.50427353
+  - 0.75213677
+  - 1
