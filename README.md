@@ -15,3 +15,5 @@ Important notes before baking an animation:
 -	Object must consist of only 1 skinned mesh renderer.
 -	Object should consist of only 1 material. 
 -	Do not delete or change the location of “Anim Baker” folder.
+
+Tip: For multiple animation bakes, its recommended that start and end poses of the animations are similar. Otherwise the jump between the animations might look sudden.
