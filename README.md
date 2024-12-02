@@ -1,5 +1,7 @@
 https://github.com/user-attachments/assets/a5be1733-7fa7-45bd-9dbb-522f4db8b60e
 
+https://github.com/user-attachments/assets/14d1d56d-b02c-41ef-b43e-c3cbf191bf30
+
 If you want to import this to your existing project, place the "Anim Baker" folder into unity's "Assets" folder. 
 
 How to bake animations:
