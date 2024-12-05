@@ -17,7 +17,7 @@ New non-skinned gameobject will be created playing your animations.
 2.	Call its “PlayAnim” function by passing the baked objects material and the animation index to it. Look at “SpiderAnimPlayer” script as an example.
 
 ### Async Animations:
-1.  Add "Anim Asynchronizer" script to some gameobject.
+1.  Add "Anim Asynchronizer" script to any gameobject.
 2.  Drag all of the vertex animated objects in to the "objects" field.
 3.  The animations now will play async from each other upon play. **Note:** Only works for single animation objects! Doesn't support multiple animations.
 
