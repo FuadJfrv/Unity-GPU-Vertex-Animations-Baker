@@ -1,3 +1,7 @@
+// Upgrade NOTE: replaced 'UNITY_INSTANCE_ID' with 'UNITY_VERTEX_INPUT_INSTANCE_ID'
+
+// Upgrade NOTE: replaced 'UNITY_INSTANCE_ID' with 'UNITY_VERTEX_INPUT_INSTANCE_ID'
+
 Shader "Custom/VertexAnimation"
 {
     Properties
@@ -27,6 +31,8 @@ Shader "Custom/VertexAnimation"
         
         // Use shader model 3.0 target, to get nicer looking lighting
         #pragma target 3.0
+        #pragma multi_compile_instancing
+
 
         sampler2D _MainTex;
         sampler2D _PosTex, _NormTex, _TanTex;
@@ -35,6 +41,8 @@ Shader "Custom/VertexAnimation"
         {
              float2 uv_MainTex : TEXCOORD0;
              float2 uv2 : TEXCOORD1;
+             float3 worldPos;
+             UNITY_VERTEX_INPUT_INSTANCE_ID 
         };
 
         half _Glossiness;
@@ -43,20 +51,24 @@ Shader "Custom/VertexAnimation"
         float _Speed;
         float _MaxDist;
         float _SpeedController;
-        fixed _StartOffset;
+        float _StartOffset;
+        //float _AsyncOffset;
         fixed _ClipSize;
         
         UNITY_INSTANCING_BUFFER_START(Props)
             // put more per-instance properties here
-        UNITY_INSTANCING_BUFFER_END(Props)
+         UNITY_DEFINE_INSTANCED_PROP(float, _AsyncOffset)
 
+        UNITY_INSTANCING_BUFFER_END(Props)
+        
         void vert (inout appdata_full v, out Input o)
         {
             UNITY_INITIALIZE_OUTPUT(Input, o);
             
             o.uv2 = v.texcoord2;
+            // Generate a random number based on the instance ID
             o.uv2.y += _Time.y * _Speed * _SpeedController;
-            o.uv2.y = (o.uv2.y % _ClipSize) + _StartOffset;
+            o.uv2.y = (o.uv2.y % _ClipSize) + _StartOffset + UNITY_ACCESS_INSTANCED_PROP(Props,_AsyncOffset);
             
             float3 animTex = tex2Dlod(_PosTex, float4(o.uv2 , 0, 0)).rgb;
             float3 normTex = tex2Dlod(_NormTex, float4(o.uv2 , 0, 0)).rgb;
@@ -65,7 +77,7 @@ Shader "Custom/VertexAnimation"
             animTex = animTex * 2.0 - 1.0;
             normTex = normTex * 2.0 - 1.0;
             
-            //uncompress
+            //uncompres
             animTex *= _MaxDist;
             //animTex *= 1.667;
             

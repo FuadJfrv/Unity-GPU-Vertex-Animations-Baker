@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: spider
+  m_Name: spider multi
   m_Shader: {fileID: 4800000, guid: 45c527e2aa4c0cd49aad289aa146b84c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -28,21 +28,21 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormTex:
-        m_Texture: {fileID: 2800000, guid: 8ade56c5f9b13b04dafb2a54a250b9ae, type: 3}
+        m_Texture: {fileID: 2800000, guid: f4b8f61bdae37e741b729e6d94310951, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _PosTex:
-        m_Texture: {fileID: 2800000, guid: 4257771d14570164f9b2e8f14189debe, type: 3}
+        m_Texture: {fileID: 2800000, guid: f724c8537ed379f448eafcf0cc818d2c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _ClipSize: 1
     - _Glossiness: 0.5
-    - _MaxDist: 4.669495
+    - _MaxDist: 4.6701183
     - _Metallic: 0
     - _Speed: 1
-    - _SpeedController: 1
+    - _SpeedController: 0.33333334
     - _StartOffset: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
