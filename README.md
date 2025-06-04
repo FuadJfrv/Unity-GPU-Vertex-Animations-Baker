@@ -9,7 +9,7 @@ Takes a keyframed animation and bakes it into a texture where width represents t
 If you want to import this to your existing project, place the "Anim Baker" folder into unity's "Assets" folder. 
 
 ### How to bake animations:
-1.	Attach “Anim Tex Generator” script to the object who animations you want to bake.
+1.	Attach “Anim Tex Generator” script to the object whose animations you want to bake.
 2.	Drag the clips you want to be bake into the “Clips” slot in the script.
 3.	Press Generate.
 New non-skinned gameobject will be created playing your animations.
