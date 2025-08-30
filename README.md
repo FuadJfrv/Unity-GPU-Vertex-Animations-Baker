@@ -6,7 +6,7 @@ https://github.com/user-attachments/assets/b4aa1a39-abdd-48b8-b3da-c0e99172746f
 
 Takes a keyframed animation and bakes it into a texture where width represents the vertices of the model, and the height represents the keyframes. The texture then gets sampled by the GPU and the model is animated through the vertex shader. 
 
-If you want to import this to your existing project, place the "Anim Baker" and "Editor" folder into unity's "Assets" folder. 
+If you want to import this to your existing project, place the "Anim Baker" and "Editor" folders into unity's "Assets" folder. 
 
 ### How to bake animations:
 1.	Attach “Anim Tex Generator” script to the object whose animations you want to bake.
